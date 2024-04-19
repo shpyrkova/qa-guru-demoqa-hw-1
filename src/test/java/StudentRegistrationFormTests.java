@@ -2,8 +2,6 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -36,7 +34,7 @@ public class StudentRegistrationFormTests {
         $(byText("English")).click();
         $("#hobbies-checkbox-1").parent().click();
         $("#hobbies-checkbox-2").parent().click();
-        $("#uploadPicture").uploadFile(new File("src/test/data/Student_register_form_test.jpg"));
+        $("#uploadPicture").uploadFromClasspath("Student_register_form_test.jpg");
         $("#currentAddress").setValue("Walking street");
         $(byText("Select State")).click();
         $(byText("Haryana")).scrollIntoView(true);
