@@ -23,6 +23,7 @@ public class StudentRegistrationFormTests extends TestBase {
         String userNumber = TestDataGenerator.generatePhoneNumber();
         String userAddress = TestDataGenerator.generateAddress();
         String hobby = TestDataGenerator.generateHobby();
+        String subject = TestDataGenerator.generateSubject();
         String state = TestDataGenerator.generateState();
         String city = TestDataGenerator.generateCity(state);
         String picture = new TestDataGenerator().picture;
@@ -34,8 +35,7 @@ public class StudentRegistrationFormTests extends TestBase {
                 .setGender(gender)
                 .setUserNumber(userNumber)
                 .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
-                .setSubject("Ma", "Maths") // как сделать именно такую проверку фейкером?
-                .setSubject("En", "English") // это наиболее приближенно к действию юзера
+                .setSubject(subject)
                 .setHobby(hobby)
                 .uploadPicture(picture)
                 .setAddress(userAddress)
@@ -48,7 +48,7 @@ public class StudentRegistrationFormTests extends TestBase {
                 .checkResult("Gender", gender)
                 .checkResult("Mobile", userNumber)
                 .checkResult("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth)
-                .checkResult("Subjects", "Maths, English")
+                .checkResult("Subjects", subject)
                 .checkResult("Hobbies", hobby)
                 .checkResult("Picture", picture)
                 .checkResult("Address", userAddress)

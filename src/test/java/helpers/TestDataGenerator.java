@@ -51,6 +51,12 @@ public class TestDataGenerator {
         return faker.options().option(hobbies);
     }
 
+    public static String generateSubject() {
+        String[] subjects = {"Maths", "Art", "Accounting", "Physics", "Chemistry", "Economics", "English",
+                "Biology", "History", "Civics", "Computer Science", "Social Studies", "Hindi", "Commerce"};
+        return faker.options().option(subjects);
+    }
+
     public static String generateAddress() {
         return faker.address().streetAddress();
     }

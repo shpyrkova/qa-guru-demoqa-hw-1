@@ -11,21 +11,21 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
-    private SelenideElement firstNameInput = $("#firstName"),
-            lastNameInput = $("#lastName"),
-            userEmailInput = $("#userEmail"),
-            genderWrapper = $("#genterWrapper"),
-            userNumberInput = $("#userNumber"),
-            calendarInput = $("#dateOfBirthInput"),
-            subjectInput =  $("#subjectsInput"),
-            hobbiesWrapper = $("#hobbiesWrapper"),
-            pictureInput = $("#uploadPicture"),
-            currentAddressInput = $("#currentAddress"),
-            stateCityWrapper = $("#stateCity-wrapper"),
-            stateInput = $("#state"),
-            cityInput = $("#city"),
-            submitButton = $("#submit"),
-            formHeader = $(".practice-form-wrapper").$(byText("Student Registration Form"));
+    private final SelenideElement firstNameInput = $("#firstName");
+    private final SelenideElement lastNameInput = $("#lastName");
+    private final SelenideElement userEmailInput = $("#userEmail");
+    private final SelenideElement genderWrapper = $("#genterWrapper");
+    private final SelenideElement userNumberInput = $("#userNumber");
+    private final SelenideElement calendarInput = $("#dateOfBirthInput");
+    private final SelenideElement subjectInput =  $("#subjectsInput");
+    private final SelenideElement hobbiesWrapper = $("#hobbiesWrapper");
+    private final SelenideElement pictureInput = $("#uploadPicture");
+    private final SelenideElement currentAddressInput = $("#currentAddress");
+    private final SelenideElement stateCityWrapper = $("#stateCity-wrapper");
+    private final SelenideElement stateInput = $("#state");
+    private final SelenideElement cityInput = $("#city");
+    private final SelenideElement submitButton = $("#submit");
+    private final SelenideElement formHeader = $(".practice-form-wrapper").$(byText("Student Registration Form"));
 
     CalendarComponent calendarComponent = new CalendarComponent();
     SuccessfulRegistrationTable successfulRegistrationTable = new SuccessfulRegistrationTable();
@@ -77,9 +77,9 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setSubject(String value, String subject) {
-        subjectInput.setValue(value);
-        $(byText(subject)).click();
+
+    public RegistrationPage setSubject(String subject) {
+        subjectInput.setValue(subject).pressEnter();
 
         return this;
     }
