@@ -1,6 +1,6 @@
 package tests;
 
-import helpers.TestDataGenerator;
+import testdata.TestDataGenerator;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
