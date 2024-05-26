@@ -33,10 +33,10 @@ public class TestBase {
 
     @AfterEach
     void afterEach() {
-        closeWebDriver();
         Attachments.screenshotAs("Last step screenshot");
         Attachments.pageSource();
         Attachments.browserConsoleLogs();
         Attachments.addVideo();
+        closeWebDriver();
     }
 }
