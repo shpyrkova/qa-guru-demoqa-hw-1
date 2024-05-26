@@ -1,14 +1,16 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import testdata.TestDataGenerator;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
+import static com.codeborne.selenide.Selenide.open;
 
+@Tag("demoqa")
 public class StudentRegistrationFormTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
-
 
     @Test
     void fillAllFieldsRegistrationTest() {
