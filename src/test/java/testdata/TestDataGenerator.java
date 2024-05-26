@@ -29,7 +29,7 @@ public class TestDataGenerator {
     }
 
     public static String generateDayOfBirth() {
-        return String.valueOf(faker.number().numberBetween(1, 28));
+        return String.valueOf(faker.number().numberBetween(10, 28));
     }
 
     public static String generateMonthOfBirth() {
