@@ -16,8 +16,11 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
+
+        Configuration.browser = System.getProperty("browser", "firefox");
+        Configuration.browserSize = System.getProperty("browserSize", "1280x1024");
+        Configuration.browserVersion = System.getProperty("browserVersion", "123.0");
         Configuration.timeout = 10000;
         Configuration.remote = "https://"
                 + System.getProperty("login")
@@ -32,6 +35,7 @@ public class TestBase {
                 "enableVNC", true,
                 "enableVideo", true
         ));
+
         Configuration.browserCapabilities = capabilities;
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
