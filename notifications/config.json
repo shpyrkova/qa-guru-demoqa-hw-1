@@ -1,0 +1,17 @@
+{
+  "base": {
+    "logo": "",
+    "project": "qa guru demoqa tests",
+    "environment": "",
+    "comment": "",
+    "reportLink": "",
+    "language": "ru",
+    "allureFolder": "build/allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "1472916519:AAEJj0bXOtq0LBoPzpaZLWMQ7S_iUNhKOtU",
+    "chat": "-1002174469938",
+    "replyTo": ""
+  }
+}
